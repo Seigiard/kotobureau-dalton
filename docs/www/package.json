@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "start": "npm-run-all --parallel server livereload",
+        "server": "harp server --port 9000",
+        "livereload": "browser-sync start --proxy localhost:9000 --files '**/*.jade, **/*.less, **/*.json, **/*.js, **/*.css' --no-notify"
+    },
+    "devDependencies": {
+        "npm-run-all": "^4.0.2",
+        "browser-sync": "^2.21.0"
+    }
+}
