@@ -1,8 +1,11 @@
 {
+    "name": "daltonomer",
+    "version": "0.0.1",
     "scripts": {
         "start": "npm-run-all --parallel server livereload",
-        "server": "harp server --port 9000",
-        "livereload": "browser-sync start --proxy localhost:9000 --files '**/*.jade, **/*.less, **/*.json, **/*.js, **/*.css' --no-notify"
+        "build": "harp compile ./project ./docs",
+        "server": "harp server project --port 9000",
+        "livereload": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css' --no-notify"
     },
     "devDependencies": {
         "npm-run-all": "^4.0.2",
