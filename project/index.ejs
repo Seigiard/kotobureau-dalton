@@ -39,35 +39,29 @@
 <article>
     <h2>Цвета <br/> навигаторов <br/> и карт</h2>
     <h3>Эксперимент Ordnance Survey</h3>
-    <h4>Цвета карт плохо различаются</h4>
     <div class="group">
         <div class="col col-2">
+            <h4>Цвета карт плохо различаются</h4>
             <p>Важное свойство карт — четкое изображение объектов.</p>
             <p>Дальтоники могут видеть цвета практически неотличимыми друг от друга. Об этой проблеме часто забывают при разработке карт.</p>
         </div>
         <div class="col col-2">
-            <figure>
-                <img src="img/navigator-1-orig@2x.png" alt="Карта навигатора для Лондона"/>
-                <figcaption>Навигатор в Лондоне</figcaption>
-            </figure>
+            <%- partial("snippets/image-comparison", { image: 'navigator-1', title: 'Навигатор в Лондоне', alt: 'Карта навигатора для Лондона' }) %>
         </div>
     </div>
-    <h4>Первое решение — поменять цвета</h4>
     <div class="group">
         <div class="col col-2">
+            <h4>Первое решение — поменять цвета</h4>
             <p>Британские исследователи Ordnance Survey искали цветовые решения для карт. Они создавали не отдельные цветовые схемы для людей с различными формами дальтонизма, а цветовую палитру, которая будет работать для всех.</p>
         </div>
         <div class="col col-2">
-            <figure>
-                <img src="img/navigator-2-orig@2x.png" alt="Карта навигатора для Лондона с цветами Ordnance Survey"/>
-                <figcaption>Навигатор в Лондоне, с цветами Ordnance Survey</figcaption>
-            </figure>
+            <%- partial("snippets/image-comparison", { image: 'navigator-2', title: 'Навигатор в Лондоне, с цветами Ordnance Survey', alt: 'Карта навигатора для Лондона с цветами Ordnance Survey' }) %>
         </div>
     </div>
     <div class="group">
         <div class="col col-2">&nbsp;</div>
         <div class="col col-2">
-            <h4 class="half-margin-top">Незнакомые цвета</h4>
+            <h4>Незнакомые цвета</h4>
             <div class="group">
                 <div class="col col-2">
                     <p>Дальтоники положительно отозвались об оптимизированных версиях цвета карт, но возникла другая проблема.</p>
@@ -80,19 +74,21 @@
     </div>
     <div class="group map-solution">
         <div class="col col-1">
-            <h4 class="margin-top">Лучшее решение, когда изменения незаметны</h4>
+            <h4>Лучшее решение, когда изменения незаметны</h4>
             <p>Агентству потребовалось два года, чтобы усовершенствовать цветовую палитру, которая похожа на привычную и одинаково хорошо работает и у дальтоников, и у людей с обычным зрением.</p>
         </div>
         <div class="col col-3">
-            <div class="">
-                <figure class="padding_traffic-jam london-map">
-                    <img src="img/london-1-orig@2x.png" alt="Карта пробок Лондона"/>
-                    <figcaption>Карта пробок Лондона</figcaption>
-                </figure>
-                <figure class="london-map">
-                    <img src="img/london-2-orig@2x.png" alt="Карта пробок Лондона с цветами Ordnance Survey"/>
-                    <figcaption>Карта Ordnance Survey с новой палитрой</figcaption>
-                </figure>
+            <div class="padding_traffic-jam">
+                <%- partial("snippets/image-comparison", {
+                    image: 'london-1',
+                    title: 'Карта пробок Лондона',
+                    alt: 'Карта пробок Лондона',
+                }) %>
+                <%- partial("snippets/image-comparison", {
+                    image: 'london-2',
+                    title: 'Карта Ordnance Survey с новой палитрой',
+                    alt: 'Карта пробок Лондона с цветами Ordnance Survey',
+                }) %>
             </div>
         </div>
     </div>
@@ -113,21 +109,21 @@
         <div class="col col-2">
             <figure>
                 <img src="img/ios1.png" alt="Интерфейс звонка iOS"/>
-                <figcaption>Карта Ordnance Survey с новой палитрой</figcaption>
+                <figcaption>Звонок в ios</figcaption>
             </figure>
         </div>
     </div>
     <div class="group">
         <div class="col col-2">
-            <h4 class="margin-top">Решение приложения Telegram</h4>
+            <h4>Решение приложения Telegram</h4>
             <p>Разработчики Телеграма решили проблему с цветом кнопок, сохранив привычный вид для всех пользователей. «Опасная» кнопка отмены осталась красной, а зеленая стала синей.</p>
             <p>Красный и синий хорошо различаются при любом нарушении цветовосприятия, поэтому и цветовое кодирование телеграмма работает одинаково и у дальтоников и у обычных людей.</p>
             <p>Facebook и VK также пошли по пути использования оттенков синего. Не обязательно делать весь интерфейс синим, но важно продумать различимость цветов в ключевых точках.</p>
         </div>
         <div class="col col-2">
             <figure>
-                <img src="img/ios2.png" alt="Интерфейс звонка iOS"/>
-                <figcaption>Карта Ordnance Survey с новой палитрой</figcaption>
+                <img src="img/ios2.png" alt="Интерфейс звонка в Telegram"/>
+                <figcaption>Звонок в Telegram</figcaption>
             </figure>
         </div>
     </div>

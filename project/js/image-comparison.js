@@ -1,27 +1,30 @@
-document.querySelectorAll('.image-comparison__frame').forEach(el => {
-    const imageToCompare = el.querySelector('.image-comparison__compare');
-    const imageDivider = el.querySelector('.image-comparison__divider');
+document.querySelectorAll('.image-comparison').forEach(comparison => {
+    const frame = comparison.querySelector('.image-comparison__frame');
+    const imageToCompare = comparison.querySelector('.image-comparison__compare');
+    const imageDivider = comparison.querySelector('.image-comparison__divider');
+    const typeSwitchLinks = comparison.querySelectorAll('.image-comparison__switcher li');
     let isClicked = false;
     let x = undefined;
     let width = undefined;
 
-    document.querySelectorAll('.image-comparison__switcher li').forEach(link => {
+    typeSwitchLinks.forEach(link => {
         link.onclick = (e) => {
             e.preventDefault();
-            link.parentElement.childNodes.forEach(e => e.classList.remove('image-comparison__switcher--active'))
-            link.classList.add('image-comparison__switcher--active');
             changeImageTo(link.dataset.type);
+            changeLinkTo(link.dataset.type);
         }
     });
 
+    function changeLinkTo(type) {
+        typeSwitchLinks.forEach(link => {
+            link.classList[link.dataset.type === type ? 'add' : 'remove']('image-comparison__switcher--active');
+        });
+    }
+
     function changeImageTo(type) {
-        el.querySelectorAll('img').forEach(img => {
-            if(img.dataset.type === type) {
-                img.classList.add('image-comparison__object');
-            } else {
-                img.classList.remove('image-comparison__object');
-            }
-        })
+        comparison.querySelectorAll('img').forEach(img => {
+            img.classList[img.dataset.type === type ? 'add' : 'remove']('image-comparison__object');
+        });
     }
 
     function changeDivPosition(e) {
@@ -33,7 +36,7 @@ document.querySelectorAll('.image-comparison__frame').forEach(el => {
     function onTouchStart(e) {
         e.preventDefault();
         isClicked = true;
-        const size = el.getBoundingClientRect();
+        const size = comparison.getBoundingClientRect();
         x = size.x;
         width = size.width;
         changeDivPosition(e);
@@ -45,19 +48,19 @@ document.querySelectorAll('.image-comparison__frame').forEach(el => {
     }
 
     function onMove(e) {
-        if(!isClicked) {
+        if (!isClicked) {
             return;
         }
         changeDivPosition(e);
     }
 
-    el.ontouchstart = onTouchStart;
-    el.onmousedown = onTouchStart;
-    el.ontouchend = onTouchEnd;
-    el.ontouchleave = onTouchEnd;
-    el.onmouseup = onTouchEnd;
-    el.onmouseleave = onTouchEnd;
+    frame.ontouchstart = onTouchStart;
+    frame.onmousedown = onTouchStart;
+    frame.ontouchend = onTouchEnd;
+    frame.ontouchleave = onTouchEnd;
+    frame.onmouseup = onTouchEnd;
+    frame.onmouseleave = onTouchEnd;
 
-    el.ontouchmove = onMove;
-    el.onmousemove = onMove;
+    frame.ontouchmove = onMove;
+    frame.onmousemove = onMove;
 });
