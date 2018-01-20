@@ -5,7 +5,7 @@
         "start": "npm-run-all --parallel server livereload",
         "build": "harp compile ./project ./docs",
         "server": "harp server project --port 9000",
-        "livereload": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css, project/**/*.styl' --no-notify"
+        "livereload": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css, project/**/*.scss' --no-notify"
     },
     "devDependencies": {
         "npm-run-all": "^4.0.2",
