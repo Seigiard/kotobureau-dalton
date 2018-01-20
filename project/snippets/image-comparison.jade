@@ -1,0 +1,17 @@
+figure.image-comparison
+    .image-comparison__frame
+        .image-comparison__divider
+        .image-comparison__compare
+            img.image-comparison__original(src="img/#{image}-orig@2x.png", alt="#{alt}", draggable="false")
+        img.image-comparison__object(data-type='prota', src="img/#{image}-prota@2x.png", alt="#{alt} при протанопии", draggable="false")
+        img(data-type='deitra', src="img/#{image}-deitra@2x.png", alt="#{alt} при дейтеранопии", draggable="false")
+        img(data-type='trita', src="img/#{image}-trita@2x.png", alt="#{alt} при тританопии", draggable="false")
+    figcaption.image-comparison__title
+        | #{title}
+        ul.image-comparison__switcher
+            li.image-comparison__switcher--active(data-type='prota')
+                span Протанопия
+            li(data-type='deitra')
+                span Дейтеранопия
+            li(data-type='trita')
+                span Тританопия
