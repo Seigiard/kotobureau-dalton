@@ -2,6 +2,7 @@
     "name": "daltonomer",
     "version": "0.0.1",
     "scripts": {
+        "lint:anti-slop": "tools/oxlint/node_modules/.bin/oxlint --config .oxlintrc.json .",
         "start": "npm-run-all --parallel server livereload",
         "build": "harp compile ./project ./docs",
         "server": "harp server project --port 9000",
